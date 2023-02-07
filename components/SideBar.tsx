@@ -1,12 +1,17 @@
 "use client";
+import { collection } from "firebase/firestore";
 import { useSession, signOut } from "next-auth/react";
 import { useCollection } from "react-firebase-hooks/firestore";
+import { db } from "../firebase";
 import NewChat from "./NewChat";
 
 const SideBar = () => {
   const { data: session } = useSession();
 
-  const [chats, loading, error] = useCollection();
+  const [chats, loading, error] = useCollection(
+    session && collection(db, "users", session.user?.email!, "chats")
+  );
+
   return (
     <div className="p-2 flex flex-col h-screen">
       <div className="flex-1">
