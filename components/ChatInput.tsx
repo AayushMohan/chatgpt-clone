@@ -22,7 +22,11 @@ const ChatInput = ({ chatId }: Props) => {
           placeholder="Type your message here..."
         />
 
-        <button type="submit" className="" disabled={!prompt || !session}>
+        <button
+          type="submit"
+          className="bg-[#11A37F] hover:opacity-50 text-white font-bold px-4 py-2 rounded disabled:bg-gray-300 disabled:cursor-not-allowed "
+          disabled={!prompt || !session}
+        >
           <PaperAirplaneIcon className="h-4 w-4 -rotate-45" />
         </button>
       </form>
