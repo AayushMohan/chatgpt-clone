@@ -1,7 +1,12 @@
-import React from "react";
+"use client";
+import { Toaster } from "react-hot-toast";
 
 const ClientProvider = () => {
-  return <div>ClientProvider</div>;
+  return (
+    <>
+      <Toaster position="top-right" />
+    </>
+  );
 };
 
 export default ClientProvider;
