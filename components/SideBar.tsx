@@ -23,7 +23,7 @@ const SideBar = () => {
         <div>
           <NewChat />
 
-          <div>{/* Model Selection */}</div>
+          <div className="hidden sm:inline"></div>
 
           {/* Map through the ChatRows */}
           {chats?.docs.map((chat) => (
